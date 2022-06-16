@@ -8,7 +8,11 @@
 
 - Скачайте код
 - Установите зависимости командой `pip install -r requirements.txt`
-- Запустите один из модулей командой `python3 nasa.py` , доступные модули (`fetch_spacex_images.py`, `nasa.py` , `epic.py`)
+- Запустите один из модулей командой `python3 nasa.py` , доступные модули (`fetch_spacex_images.py`, `nasa.py`, `epic.py`, `pyblish_image_to_telegram.py`)
+- Для загрузки фотографий с проекта NASA запустите команду `python3 nasa.py` 
+- Для загрузки фотографий с проекта NASA.EPIC запустите команду `python3 epic.py`
+- Для загрузки фотографий с проекта SpaceX запустите команду `fetch_spacex_images.py`
+- Для публикации изображения в Telegram запустите команду `pyblish_image_to_telegram.py`
 
 ## Переменные окружения
 
@@ -16,10 +20,10 @@
 
 Доступны следущие переменные:
 
-- `TOKEN_NASA` — см секретный ключ проекта. [сайт API.NASA](https://api.nasa.gov/?search=#apod). Например: `erofheronoirenfoernfx49389f43xf3984xf9384`.
-- `TOKEN_BOT` = ключ вашего бота полученный от Botfather(Telegram). Например: `5312643774:AAGvL_lkprDLpDivGeSTFaNQjO7rYDx-VpU`.
-- `TIME` = время отправки ваших фотографий в Telegram. Значение указывается в секундах. Пример: `20`
-- `CHAT_ID_TG` = отвечает за канал на котором вы хотите выкладывать фотографии. Пример: `@cosmos_py`
+- `TOKEN_NASA` — см секретный ключ проекта. [сайт API.NASA](https://api.nasa.gov/?search=#apod). Например: `TOKEN_NASA=erofheronoirenfoernfx49389f43xf3984xf9384`.
+- `TOKEN_BOT` = ключ вашего бота полученный от Botfather(Telegram). Например: `TOKEN_BOT=5312643774:AAGvL_lkprDLpDivGeSTFaNQjO7rYDx-VpU`.
+- `TIME` = время отправки ваших фотографий в Telegram. Значение указывается в секундах. Пример: `TIME=20`
+- `CHAT_ID_TG` = отвечает за канал на котором вы хотите выкладывать фотографии. Пример: `CHAT_ID_TG=@cosmos_py`
 
 ## Цели проекта
 
