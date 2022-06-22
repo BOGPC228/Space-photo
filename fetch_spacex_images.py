@@ -11,11 +11,11 @@ def fetch_spacex_last_launch(directory):
     url = "https://api.spacexdata.com/v3/launches"
     response = requests.get(url)
     response.raise_for_status()
-    spacex = response.json()
-    for spacee in spacex:
-        if spacee['links']['flickr_images']:
-            sapce = spacee['links']['flickr_images']
-    for url_number, url in enumerate(sapce):
+    start_spacex_all = response.json()
+    for spacex_one in start_spacex_all:
+        if spacex_one['links']['flickr_images']:
+            spacex_link = spacex_one['links']['flickr_images']
+    for url_number, url in enumerate(spacex_link):
         filename = 'spacex'
         file_path = f'{directory}/{filename}{url_number}.jpg'
         download_img(url, file_path)
