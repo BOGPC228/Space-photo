@@ -15,6 +15,7 @@ def fetch_spacex_last_launch(directory):
     for spacex_one in start_spacex_all:
         if spacex_one['links']['flickr_images']:
             spacex_link = spacex_one['links']['flickr_images']
+            break
     for url_number, url in enumerate(spacex_link):
         filename = 'spacex'
         file_path = f'{directory}/{filename}{url_number}.jpg'
