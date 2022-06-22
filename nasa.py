@@ -16,7 +16,12 @@ def get_extension(urls):
     return extension
 
 
-def fetch_nasa_last_launch(response, directory):
+def fetch_nasa_picture_day(token, directory, count_link=50):
+    payload = {"count": count_link,
+               "api_key": token}
+    url = 'https://api.nasa.gov/planetary/apod'
+    response = requests.get(url, payload)
+    response.raise_for_status()
     urls = []
     nasa_json = response.json()
     search_key = 'url'
@@ -34,14 +39,8 @@ def main():
     load_dotenv()
     directory = "images"
     os.makedirs(directory, exist_ok=True)
-    token = os.getenv("TOKEN_NASA")
-    count_link = 50
-    payload = {"count": count_link,
-               "api_key": token}
-    url = 'https://api.nasa.gov/planetary/apod'
-    response = requests.get(url, payload)
-    response.raise_for_status()
-    fetch_nasa_last_launch(response, directory)
+    token = os.getenv("NASA_TOKEN")
+    fetch_nasa_picture_day(token, directory)
 
 if __name__ == "__main__":
     main()
