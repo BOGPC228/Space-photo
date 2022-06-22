@@ -54,7 +54,7 @@ def main():
     load_dotenv()
     directory = "images"
     os.makedirs(directory, exist_ok=True)
-    token = os.getenv("TOKEN_NASA")
+    token = os.getenv("NASA_TOKEN")
     payload = {"api_key": token}
     url = 'https://api.nasa.gov/EPIC/api/natural/images'
     response = requests.get(url, payload)
