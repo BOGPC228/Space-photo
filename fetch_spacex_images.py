@@ -7,7 +7,10 @@ import requests
 from download import download_img
 
 
-def fetch_spacex_last_launch(response, directory):
+def fetch_spacex_last_launch(directory):
+    url = "https://api.spacexdata.com/v3/launches"
+    response = requests.get(url)
+    response.raise_for_status()
     spacex = response.json()
     for spacee in spacex:
         if spacee['links']['flickr_images']:
@@ -21,10 +24,7 @@ def fetch_spacex_last_launch(response, directory):
 def main():
     directory = "images"
     os.makedirs(directory, exist_ok=True)
-    url = "https://api.spacexdata.com/v3/launches"
-    response = requests.get(url)
-    response.raise_for_status()
-    fetch_spacex_last_launch(response, directory)
+    fetch_spacex_last_launch(directory)
 
 
 if __name__ == "__main__":
