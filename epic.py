@@ -20,8 +20,6 @@ def get_date_and_title(response):
         if image_key and date_key in epic.keys():
             image_name.append(epic['image'])
             date.append(epic['date'])
-        else:
-            continue
     return image_name, date
 
 
