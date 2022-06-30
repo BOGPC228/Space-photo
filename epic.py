@@ -20,6 +20,7 @@ def generation_number_link(response, payload, directory):
         file_path = os.path.join(directory, filename)
         download_img(url_end, file_path, payload)
 
+
 def main():
     load_dotenv()
     directory = "images"
@@ -30,6 +31,7 @@ def main():
     response = requests.get(url, payload)
     response.raise_for_status()
     generation_number_link(response, payload, directory)
+
 
 if __name__ == "__main__":
     main()
