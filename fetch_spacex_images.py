@@ -1,6 +1,5 @@
 import os
-import json
-from pathlib import Path
+from urllib.parse import urlparse
 
 import requests
 
@@ -17,8 +16,10 @@ def fetch_spacex_last_launch(directory):
             spacex_link = spacex_one['links']['flickr_images']
             break
     for url_number, url in enumerate(spacex_link):
+        parse = urlparse(url)
+        extension = (os.path.splitext(parse.path))[1]
         filename = 'spacex'
-        file_path = f'{directory}/{filename}{url_number}.jpg'
+        file_path = f'{directory}/{filename}{url_number}{extension}'
         download_img(url, file_path)
 
 
