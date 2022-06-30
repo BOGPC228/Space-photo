@@ -5,13 +5,11 @@ from time import sleep
 
 
 def send_message(directory, chat_id , publication_delay_time):
-    for root, dirs, files in os.walk(directory):
-        for filee in files:
-            file = filee
-            with open(f"{directory}/{file}", 'rb') as file:
-                photo = file
-                bot.send_photo(chat_id=chat_id, photo=photo)
-            sleep(publication_delay_time)
+    for file_name in os.listdir(directory):
+        with open(f"{directory}/{file_name}", 'rb') as file:
+            photo = file
+            bot.send_photo(chat_id=chat_id, photo=photo)
+        sleep(publication_delay_time)
 
 
 def send_endlessly_photos(directory, chat_id , publication_delay_time):
