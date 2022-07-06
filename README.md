@@ -8,11 +8,11 @@
 
 - Скачайте код
 - Установите зависимости командой `pip install -r requirements.txt`
-- Запустите один из модулей командой `python3 nasa.py` , доступные модули (`fetch_spacex_images.py`, `nasa.py`, `epic.py`, `pyblish_image_to_telegram.py`)
+- Запустите один из модулей командой `python3 nasa.py` , доступные модули (`fetch_spacex_images.py`, `nasa.py`, `epic.py`, `publish_image_to_telegram.py`)
 - Для загрузки фотографий с проекта NASA запустите команду `python3 nasa.py` 
 - Для загрузки фотографий с проекта NASA.EPIC запустите команду `python3 epic.py`
 - Для загрузки фотографий с проекта SpaceX запустите команду `fetch_spacex_images.py`
-- Для публикации изображения в Telegram запустите команду `pyblish_image_to_telegram.py`
+- Для публикации изображения в Telegram запустите команду `publish_image_to_telegram.py`
 
 ## Переменные окружения
 

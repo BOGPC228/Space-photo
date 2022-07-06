@@ -8,17 +8,17 @@ from download import download_img
 
 
 def generation_number_link(response, payload, directory):
-    link_epic = response.json()
-    for url_number, link in enumerate(link_epic):
+    epic_link = response.json()
+    for url_number, link in enumerate(epic_link):
         link_name = link['image']
         image_date = link['date']
         date_t = datetime.datetime.fromisoformat(image_date)
         date_format = date_t.strftime("%Y/%m/%d")
-        url_end = 'https://api.nasa.gov/EPIC/archive/natural/{}/png/{}.png'
-        url_end = url_end.format(date_format, link_name)
+        link_template = 'https://api.nasa.gov/EPIC/archive/natural/{}/png/{}.png'
+        link_template = link_template.format(date_format, link_name)
         filename = f"epic_{url_number}.png"
         file_path = os.path.join(directory, filename)
-        download_img(url_end, file_path, payload)
+        download_img(link_template, file_path, payload)
 
 
 def main():
