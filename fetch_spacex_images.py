@@ -17,7 +17,7 @@ def fetch_spacex_last_launch(directory):
             break
     for url_number, url in enumerate(spacex_link):
         parse = urlparse(url)
-        extension = (os.path.splitext(parse.path))[1]
+        path, extension = os.path.splitext(parse.path)
         filename = f'spacex_{url_number}{extension}'
         file_path = os.path.join(directory, filename)
         download_img(url, file_path)
