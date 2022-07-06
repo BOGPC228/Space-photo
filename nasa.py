@@ -15,12 +15,13 @@ def fetch_nasa_picture_day(token, directory, count_link=50):
     response.raise_for_status()
     nasa_json = response.json()
     for url_number, nasa in enumerate(nasa_json):
-        if 'url' in nasa.keys():
-            parse = urlparse(nasa['url'])
-            extension = (os.path.splitext(parse.path))[1]
-            filename = f"nasax_{url_number}{extension}"
-            file_path = os.path.join(directory, filename)
-            download_img(nasa['url'], file_path)
+        if not 'url' in nasa.keys():
+            continue
+        parse = urlparse(nasa['url'])
+        extension = (os.path.splitext(parse.path))[1]
+        filename = f"nasax_{url_number}{extension}"
+        file_path = os.path.join(directory, filename)
+        download_img(nasa['url'], file_path)
 
 
 def main():
