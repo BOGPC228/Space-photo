@@ -14,9 +14,8 @@ def fetch_nasa_picture_day(token, directory, count_link=50):
     response = requests.get(url, payload)
     response.raise_for_status()
     nasa_json = response.json()
-    search_key = 'url'
     for url_number, nasa in enumerate(nasa_json):
-        if search_key in nasa.keys():
+        if 'url' in nasa.keys():
             parse = urlparse(nasa['url'])
             extension = (os.path.splitext(parse.path))[1]
             filename = f"nasax_{url_number}{extension}"
