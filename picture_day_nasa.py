@@ -13,8 +13,8 @@ def fetch_nasa_picture_day(token, directory, count_link=50):
     url = 'https://api.nasa.gov/planetary/apod'
     response = requests.get(url, payload)
     response.raise_for_status()
-    nasa_link = response.json()
-    for url_number, nasa in enumerate(nasa_link):
+    nasa_pictures = response.json()
+    for url_number, nasa in enumerate(nasa_pictures):
         if not 'url' in nasa.keys():
             continue
         parse = urlparse(nasa['url'])
