@@ -7,15 +7,15 @@ from dotenv import load_dotenv
 from download import download_img
 
 
-def fetch_nasa_picture_day(token, directory, count_link=50):
-    payload = {"count": count_link,
+def fetch_nasa_picture_day(token, directory, link_count=50):
+    payload = {"count": link_count,
                "api_key": token}
     url = 'https://api.nasa.gov/planetary/apod'
     response = requests.get(url, payload)
     response.raise_for_status()
     nasa_pictures = response.json()
     for url_number, nasa in enumerate(nasa_pictures):
-        if not 'url' in nasa.keys():
+        if 'url' not in nasa.keys():
             continue
         parse = urlparse(nasa['url'])
         extension = (os.path.splitext(parse.path))[1]
