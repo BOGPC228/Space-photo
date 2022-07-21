@@ -6,7 +6,7 @@ from time import sleep
 
 if __name__ == '__main__':
     load_dotenv()
-    directory = "Space-photo\images"
+    directory = "images"
     token = os.getenv("BOT_TOKEN")
     chat_id = os.getenv("TG_CHAT_ID")
     publication_delay_time = os.getenv("DELAY_TIME")
