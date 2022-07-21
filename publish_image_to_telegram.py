@@ -6,9 +6,9 @@ from time import sleep
 
 if __name__ == '__main__':
     load_dotenv()
-    directory = "images"
-    token = os.getenv("TOKEN_BOT")
-    chat_id = os.getenv("CHAT_ID_TG")
+    directory = "Space-photo\images"
+    token = os.getenv("BOT_TOKEN")
+    chat_id = os.getenv("TG_CHAT_ID")
     publication_delay_time = os.getenv("DELAY_TIME")
     publication_delay_time = int(publication_delay_time)
     bot = telegram.Bot(token=token)
@@ -17,5 +17,3 @@ if __name__ == '__main__':
             with open(f"{directory}/{file_name}", 'rb') as photo:
                 bot.send_photo(chat_id=chat_id, photo=photo)
             sleep(publication_delay_time)
-
-    
