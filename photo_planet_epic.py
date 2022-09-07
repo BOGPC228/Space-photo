@@ -7,7 +7,7 @@ from dotenv import load_dotenv
 from download import download_img
 
 
-def create_numbered_links(response, payload, directory):
+def get_epic_images(response, payload, directory):
     for url_number, link in enumerate(response.json()):
         link_name = link['image']
         date_format = format_date(link)
@@ -34,7 +34,7 @@ def main():
     url = 'https://api.nasa.gov/EPIC/api/natural/images'
     response = requests.get(url, payload)
     response.raise_for_status()
-    create_numbered_links(response, payload, directory)
+    get_epic_images(response, payload, directory)
 
 
 if __name__ == "__main__":

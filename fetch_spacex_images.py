@@ -6,7 +6,7 @@ import requests
 from download import download_img
 
 
-def fetch_spacex_last_launch(directory):
+def fetch_spacex_launch(directory):
     url = "https://api.spacexdata.com/v3/launches"
     response = requests.get(url)
     response.raise_for_status()
@@ -26,7 +26,7 @@ def fetch_spacex_last_launch(directory):
 def main():
     directory = "images"
     os.makedirs(directory, exist_ok=True)
-    fetch_spacex_last_launch(directory)
+    fetch_spacex_launch(directory)
 
 
 if __name__ == "__main__":
