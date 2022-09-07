@@ -35,7 +35,7 @@
 Доступны следущие переменные:
 
 - `TOKEN_NASA` — см секретный ключ проекта. [сайт API.NASA](https://api.nasa.gov/?search=#apod). Например: `TOKEN_NASA=erofheronoirenfoernfx49389f43xf3984xf9384`.
-- `BOT_TOKEN` = ключ вашего бота полученный от Botfather(Telegram). Например: `BOT_TOKEN=5312643774:AAGvL_lkprDLpDivGeSTFaNQjO7rYDx-VpU`.
+- `TG_BOT_TOKEN` = ключ вашего бота полученный от Botfather(Telegram). Например: `TG_BOT_TOKEN=5312643774:AAGvL_lkprDLpDivGeSTFaNQjO7rYDx-VpU`.
 - `DELAY_TIME` = время отправки ваших фотографий в Telegram. Значение указывается в секундах. Пример: `DELAY_TIME=20`
 - `TG_CHAT_ID` = отвечает за канал на котором вы хотите выкладывать фотографии. Пример: `TG_CHAT_ID=@cosmos_py`
 
