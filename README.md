@@ -7,18 +7,26 @@
 Для запуска блога у вас уже должен быть установлен Python 3.
 
 - Скачайте код
-- Установите зависимости командой ```pip install -r requirements.txt```
-- Запустите один из модулей командой ```python3 picture_day_nasa.py``` , доступные модули:
+- Установите зависимости командой 
 ```python
-    fetch_spacex_images.py, 
-    picture_day_nasa.py, 
-    photo_planet_epic.py, 
-    publish_image_to_telegram.py
+    pip install -r requirements.txt
 ```
-- Для загрузки фотографий с проекта NASA запустите команду `python3 picture_day_nasa.py` 
-- Для загрузки фотографий с проекта NASA.EPIC запустите команду `python3 photo_planet_epic.py`
-- Для загрузки фотографий с проекта SpaceX запустите команду `fetch_spacex_images.py`
-- Для публикации изображения в Telegram запустите команду `publish_image_to_telegram.py`
+- Для загрузки фотографий с проекта NASA запустите команду 
+```python
+    python3 picture_day_nasa.py
+```
+- Для загрузки фотографий с проекта NASA.EPIC запустите команду 
+```python
+    python3 photo_planet_epic.py
+```
+- Для загрузки фотографий с проекта SpaceX запустите команду 
+```python
+    python3 fetch_spacex_images.py
+```
+- Для публикации изображения в Telegram запустите команду 
+```python
+    python3 publish_image_to_telegram.py
+```
 
 ## Переменные окружения
 
